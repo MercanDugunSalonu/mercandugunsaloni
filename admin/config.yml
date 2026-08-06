@@ -1,0 +1,193 @@
+backend:
+  name: git-gateway
+  branch: main # Sitenin yükleneceği ana git dalı (genelde main)
+
+local_backend: true
+
+publish_mode: simple
+
+media_folder: "Resimler" # Müşterinin yüklediği görsellerin kaydedileceği klasör
+public_folder: "Resimler"
+
+collections:
+  - name: "settings"
+    label: "⚙️ Genel Site Ayarları"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "settings.json"
+        label: "Genel Metinler ve Slaytlar"
+        name: "settings_data"
+        fields:
+          - name: "settings"
+            label: "Genel Site Ayarları ve Metinler"
+            widget: "object"
+            fields:
+              - { label: "Site Başlığı (Tarayıcı Sekme İsmi)", name: "site_title", widget: "string" }
+              - { label: "Site Açıklaması (Google Arama Sonuçları İçin)", name: "site_desc", widget: "text" }
+              - { label: "Ana Logo Yazısı (MERCAN)", name: "logo_title", widget: "string" }
+              - { label: "Logo Alt Yazısı (DÜĞÜN & DAVET)", name: "logo_subtitle", widget: "string" }
+              
+              # Slaytlar
+              - { label: "Ana Sayfa Slayt 1 (Görsel)", name: "hero_slide_1", widget: "image" }
+              - { label: "Ana Sayfa Slayt 2 (Görsel)", name: "hero_slide_2", widget: "image" }
+              - { label: "Ana Sayfa Slayt 3 (Görsel)", name: "hero_slide_3", widget: "image" }
+              
+              # Slogan ve Hero
+              - { label: "Giriş Sloganı (Küçük Yazı)", name: "hero_tagline", widget: "string" }
+              - { label: "Ana Giriş Başlığı", name: "hero_title", widget: "string" }
+              - { label: "Giriş Detay Açıklaması", name: "hero_desc", widget: "text" }
+              
+              # Hakkımızda
+              - { label: "Hakkımızda Görsel 1 (Büyük)", name: "about_img_1", widget: "image" }
+              - { label: "Hakkımızda Görsel 2 (Küçük)", name: "about_img_2", widget: "image" }
+              - { label: "Tecrübe Yılı (Örn: 15+)", name: "about_experience_years", widget: "string" }
+              - { label: "Tecrübe Yazısı (Örn: Yıllık Tecrübe)", name: "about_experience_text", widget: "string" }
+              - { label: "Hakkımızda Küçük Başlık", name: "about_subtitle", widget: "string" }
+              - { label: "Hakkımızda Ana Başlık", name: "about_title", widget: "string" }
+              - { label: "Hakkımızda Detaylı Yazı", name: "about_desc", widget: "text" }
+              
+              # Hakkımızda Özellikler
+              - { label: "Özellik 1 - Başlık", name: "about_feat_1_title", widget: "string" }
+              - { label: "Özellik 1 - Detay", name: "about_feat_1_desc", widget: "text" }
+              - { label: "Özellik 2 - Başlık", name: "about_feat_2_title", widget: "string" }
+              - { label: "Özellik 2 - Detay", name: "about_feat_2_desc", widget: "text" }
+              - { label: "Özellik 3 - Başlık", name: "about_feat_3_title", widget: "string" }
+              - { label: "Özellik 3 - Detay", name: "about_feat_3_desc", widget: "text" }
+              
+              # Salon Özellikleri
+              - { label: "Salon İnceleme Alt Başlık", name: "venue_subtitle", widget: "string" }
+              - { label: "Salon İnceleme Başlık (Örn: Boş Salon Görselleri)", name: "venue_title", widget: "string" }
+              - { label: "Boş Salon Görseli 1", name: "venue_slide_1", widget: "image" }
+              - { label: "Boş Salon Görseli 2", name: "venue_slide_2", widget: "image" }
+              - { label: "Boş Salon Görseli 3", name: "venue_slide_3", widget: "image" }
+              
+              - { label: "Salon Sağ Sütun Üst Başlık", name: "venue_right_subtitle", widget: "string" }
+              - { label: "Salon Sağ Sütun Ana Başlık", name: "venue_right_title", widget: "string" }
+              - { label: "Salon Sağ Sütun Detaylı Açıklama", name: "venue_right_desc", widget: "text" }
+              
+              # Salon Teknik Kartları
+              - { label: "Teknik Özellik 1 - Başlık", name: "venue_feat_1_title", widget: "string" }
+              - { label: "Teknik Özellik 1 - Detay", name: "venue_feat_1_desc", widget: "text" }
+              - { label: "Teknik Özellik 2 - Başlık", name: "venue_feat_2_title", widget: "string" }
+              - { label: "Teknik Özellik 2 - Detay", name: "venue_feat_2_desc", widget: "text" }
+              - { label: "Teknik Özellik 3 - Başlık", name: "venue_feat_3_title", widget: "string" }
+              - { label: "Teknik Özellik 3 - Detay", name: "venue_feat_3_desc", widget: "text" }
+              - { label: "Teknik Özellik 4 - Başlık", name: "venue_feat_4_title", widget: "string" }
+              - { label: "Teknik Özellik 4 - Detay", name: "venue_feat_4_desc", widget: "text" }
+              - { label: "Teknik Özellik 5 - Başlık", name: "venue_feat_5_title", widget: "string" }
+              - { label: "Teknik Özellik 5 - Detay", name: "venue_feat_5_desc", widget: "text" }
+              - { label: "Teknik Özellik 6 - Başlık", name: "venue_feat_6_title", widget: "string" }
+              - { label: "Teknik Özellik 6 - Detay", name: "venue_feat_6_desc", widget: "text" }
+              
+              # Tanıtım Videosu
+              - { label: "Tanıtım Videosu Alt Başlık", name: "video_subtitle", widget: "string" }
+              - { label: "Tanıtım Videosu Başlık", name: "video_title", widget: "string" }
+              - { label: "Tanıtım Videosu Açıklama", name: "video_desc", widget: "text" }
+              - { label: "Video Üst Kapak Görseli", name: "video_cover", widget: "image" }
+              - { label: "Video Yolu (Yerel Dosya veya YouTube Linki)", name: "video_path", widget: "string" }
+              
+              # Hizmetler
+              - { label: "Hizmetler Alt Başlık", name: "services_subtitle", widget: "string" }
+              - { label: "Hizmetler Ana Başlık", name: "services_title", widget: "string" }
+              - { label: "Hizmetler Açıklama", name: "services_desc", widget: "text" }
+              
+              # Hizmet 1
+              - { label: "Hizmet 1 - Görsel", name: "service_1_img", widget: "image" }
+              - { label: "Hizmet 1 - İkon Kodu (FontAwesome)", name: "service_1_icon", widget: "string" }
+              - { label: "Hizmet 1 - Başlık", name: "service_1_title", widget: "string" }
+              - { label: "Hizmet 1 - Detay", name: "service_1_desc", widget: "text" }
+              
+              # Hizmet 2
+              - { label: "Hizmet 2 - Görsel", name: "service_2_img", widget: "image" }
+              - { label: "Hizmet 2 - İkon Kodu (FontAwesome)", name: "service_2_icon", widget: "string" }
+              - { label: "Hizmet 2 - Başlık", name: "service_2_title", widget: "string" }
+              - { label: "Hizmet 2 - Detay", name: "service_2_desc", widget: "text" }
+              
+              # Hizmet 3
+              - { label: "Hizmet 3 - Görsel", name: "service_3_img", widget: "image" }
+              - { label: "Hizmet 3 - İkon Kodu (FontAwesome)", name: "service_3_icon", widget: "string" }
+              - { label: "Hizmet 3 - Başlık", name: "service_3_title", widget: "string" }
+              - { label: "Hizmet 3 - Detay", name: "service_3_desc", widget: "text" }
+              
+              # Galeri Slogan
+              - { label: "Galeri Üst Başlık", name: "gallery_subtitle", widget: "string" }
+              - { label: "Galeri Ana Başlık", name: "gallery_title", widget: "string" }
+              - { label: "Galeri Açıklama Metni", name: "gallery_desc", widget: "text" }
+              
+              # İstatistik Sayıları
+              - { label: "İstatistik 1 (Sayı)", name: "stats_1_num", widget: "string" }
+              - { label: "İstatistik 1 (Etiket)", name: "stats_1_label", widget: "string" }
+              - { label: "İstatistik 2 (Sayı)", name: "stats_2_num", widget: "string" }
+              - { label: "İstatistik 2 (Etiket)", name: "stats_2_label", widget: "string" }
+              - { label: "İstatistik 3 (Sayı)", name: "stats_3_num", widget: "string" }
+              - { label: "İstatistik 3 (Etiket)", name: "stats_3_label", widget: "string" }
+              - { label: "İstatistik 4 (Sayı)", name: "stats_4_num", widget: "string" }
+              - { label: "İstatistik 4 (Etiket)", name: "stats_4_label", widget: "string" }
+              
+              # İletişim Bilgileri
+              - { label: "İletişim Üst Başlık", name: "contact_subtitle", widget: "string" }
+              - { label: "İletişim Ana Başlık", name: "contact_title", widget: "string" }
+              - { label: "İletişim Açıklama Metni", name: "contact_desc", widget: "text" }
+              - { label: "Fiziksel Adres", name: "contact_address", widget: "text" }
+              - { label: "Telefon Numarası", name: "contact_phone", widget: "string" }
+              - { label: "E-Posta Adresi", name: "contact_email", widget: "string" }
+              - { label: "Instagram Linki", name: "contact_instagram", widget: "string" }
+              - { label: "Facebook Linki", name: "contact_facebook", widget: "string" }
+              - { label: "YouTube Linki", name: "contact_youtube", widget: "string" }
+              
+              # Footer
+              - { label: "Alt Kısım (Footer) Sloganı", name: "footer_tagline", widget: "text" }
+
+  - name: "events"
+    label: "📸 Etkinlik Albümleri"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "events.json"
+        label: "Albümleri Düzenle"
+        name: "events_data"
+        fields:
+          - name: "events"
+            label: "Tüm Albümler"
+            widget: "list"
+            summary: "{{fields.name}} ({{fields.category_name}})"
+            fields:
+              - { label: "Albüm ID (Benzersiz bir sayı, Örn: 1, 2, 3...)", name: "id", widget: "number", value_type: "int" }
+              - { label: "Albüm / Etkinlik Adı", name: "name", widget: "string" }
+              - { label: "Tarih", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Kategori", name: "category_name", widget: "select", options: ["Düğün Organizasyonu", "Kına Gecesi", "Nişan & Söz", "Kurumsal Etkinlik", "Diğer"] }
+              - { label: "Kapak Resmi", name: "cover_path", widget: "image" }
+              - { label: "Kapak Türü", name: "cover_type", widget: "select", options: ["image", "video"], default: "image" }
+              - name: "media"
+                label: "Albüm Fotoğrafları ve Videoları"
+                widget: "list"
+                fields:
+                  - { label: "Medya Dosyası veya YouTube Linki", name: "src", widget: "image" }
+                  - { label: "Medya Türü", name: "type", widget: "select", options: ["image", "video"], default: "image" }
+                  - { label: "Açıklama (İsteğe bağlı)", name: "caption", widget: "string", required: false }
+
+  - name: "blogs"
+    label: "✍️ Blog Yazıları"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "blogs.json"
+        label: "Yazıları Düzenle"
+        name: "blogs_data"
+        fields:
+          - name: "blogs"
+            label: "Tüm Yazılar"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { label: "Yazı Slug (URL Dostu İsim, Örn: kina-gecesi-tavsiyeleri)", name: "slug", widget: "string" }
+              - { label: "Yazı Başlığı", name: "title", widget: "string" }
+              - { label: "Yazı Tarihi", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Öne Çıkan Görsel", name: "image", widget: "image" }
+              - { label: "Yazar Adı", name: "author", widget: "string", default: "Mercan Davet" }
+              - { label: "Kısa Özet (Liste Ekranında Görünecek)", name: "summary", widget: "text" }
+              - { label: "Yazı Detay İçeriği (Görsel Editör)", name: "content", widget: "markdown", description: "İpucu: Kalın yazı, listeler ve başlıklar eklemek için üstteki görsel araç çubuğunu kullanabilirsiniz. Paragrafları ayırmak için Enter tuşuna basmanız yeterlidir." }

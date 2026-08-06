@@ -1,0 +1,119 @@
+{
+  "events": [
+    {
+      "id": 2,
+      "name": "Sellami & Ayşegül Düğün Merasimi",
+      "date": "2026-07-12",
+      "category_name": "Düğün Organizasyonları",
+      "cover_path": "https://iili.io/C1jPLIp.jpg",
+      "cover_type": "image",
+      "media": [
+        {
+          "src": "https://iili.io/C1jPLIp.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jP6YJ.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jPPkv.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jP42a.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jPZQI.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jPDBt.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jPy2s.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1ji9YG.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiHvf.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1ji3j2.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jizyx.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiujV.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiAZB.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1ji7G1.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jic3g.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1ji08J.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1ji1yv.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiGuR.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiMjp.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://iili.io/C1jiUt2.jpg",
+          "type": "image",
+          "caption": null
+        },
+        {
+          "src": "https://www.youtube.com/embed/U1JeDcl8e-Y",
+          "type": "video",
+          "caption": null
+        }
+      ]
+    }
+  ]
+}

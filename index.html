@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="siteTitle">Mercan Düğün Salonu | Hayallerinizin Başladığı Yer</title>
+    <meta name="description" id="siteDesc" content="Mercan Düğün Salonu, lüks tasarımı, profesyonel ekibi ve unutulmaz anlar için sunduğu eşsiz hizmetleriyle düğün, nişan, kına ve kurumsal etkinliklerinizde hizmetinizde.">
+    <meta name="keywords" content="mercan düğün salonu, düğün salonu, kına salonu, nişan salonu, lüks düğün, davet salonu">
+    <meta name="author" content="Mercan Davet">
+    
+    <!-- Google Fonts: Playfair Display (Elegant Serif) & Inter (Modern Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons for modern UI elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Navigation Bar -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-title logoTitle">MERCAN</span>
+                <span class="logo-subtitle logoSubtitle">DÜĞÜN & DAVET</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#anasayfa" class="nav-link active">Ana Sayfa</a></li>
+                    <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="#salonumuz" class="nav-link">Salonumuz</a></li>
+                    <li><a href="#hizmetlerimiz" class="nav-link">Hizmetlerimiz</a></li>
+                    <li><a href="#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="#iletisim" class="nav-link btn-nav">Teklif Al</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat" id="mobileToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Slider -->
+    <section id="anasayfa" class="hero-section">
+        <div class="hero-slider" id="heroSlider">
+            <!-- Dinamik yüklenecek slaytlar -->
+            <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.44.jpeg');"></div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.46.jpeg');"></div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg');"></div>
+        </div>
+        
+        <div class="hero-content container">
+            <p class="hero-tagline" id="heroTagline">HAYALLERİNİZİN BAŞLADIĞI YER</p>
+            <h1 class="hero-title" id="heroTitle">Unutulmaz Davetler, Sonsuz Mutluluklar</h1>
+            <p class="hero-description" id="heroDesc">Mercan Düğün & Davet Salonu olarak, hayatınızın en özel gününü görkemli bir şölene dönüştürüyoruz. Modern mimarimiz, zengin menü seçeneklerimiz ve profesyonel ekibimizle hizmetinizdeyiz.</p>
+            <div class="hero-actions">
+                <a href="#iletisim" class="btn btn-primary">Teklif İsteyin</a>
+                <a href="#galeri" class="btn btn-outline">Salonu Keşfedin</a>
+            </div>
+        </div>
+        
+        <div class="slider-controls" id="heroSliderControls">
+            <button class="slider-dot active" data-index="0" aria-label="Slayt 1"></button>
+            <button class="slider-dot" data-index="1" aria-label="Slayt 2"></button>
+            <button class="slider-dot" data-index="2" aria-label="Slayt 3"></button>
+        </div>
+    </section>
+
+    <!-- About Section (Hakkımızda) -->
+    <section id="hakkimizda" class="about-section section-padding">
+        <div class="container grid-2">
+            <div class="about-img-group reveal">
+                <div class="img-wrapper main-img">
+                    <img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.45.jpeg" alt="Mercan Salon Görünümü" id="aboutImg1" loading="lazy">
+                </div>
+                <div class="img-wrapper sub-img">
+                    <img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.47.jpeg" alt="Düğün Masası Detayı" id="aboutImg2" loading="lazy">
+                </div>
+                <div class="experience-badge">
+                    <span class="years" id="aboutExpYears">15+</span>
+                    <span class="badge-text" id="aboutExpText">Yıllık Tecrübe</span>
+                </div>
+            </div>
+            
+            <div class="about-content reveal">
+                <span class="section-subtitle" id="aboutSubtitle">Hakkımızda</span>
+                <h2 class="section-title" id="aboutTitle">En Özel Gününüzde, Her Detayda Kusursuzluk</h2>
+                <p class="about-text" id="aboutDesc">Mercan Düğün Salonu olarak, uzun yıllardır davet sektöründe kalitenin ve güvenin adresi olmaktan gurur duyuyoruz. Misafirlerimizin mutluluğunu her şeyin önünde tutarak, her ayrıntıyı titizlikle planlıyoruz.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="feature-info">
+                            <h3 id="aboutFeat1Title">Yüksek Kapasite</h3>
+                            <p id="aboutFeat1Desc">Geniş ve kolonsuz salon yapımızla 800 kişiye kadar misafirlerinizi konforla ağırlıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <div class="feature-info">
+                            <h3 id="aboutFeat2Title">Zengin İkram ve Menüler</h3>
+                            <p id="aboutFeat2Desc">Usta şeflerimizin hazırladığı eşsiz lezzetlerle davetinize tat katıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-snowflake"></i></div>
+                        <div class="feature-info">
+                            <h3 id="aboutFeat3Title">Gelişmiş İklimlendirme</h3>
+                            <p id="aboutFeat3Desc">Güçlü havalandırma ve klima sistemlerimizle her mevsim ideal ferahlık sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Specifications Section (Salonumuz / Özellikler) -->
+    <section id="salonumuz" class="venue-section section-padding bg-light">
+        <div class="container grid-2">
+            <!-- Left Column: Venue Gallery/Slider -->
+            <div class="venue-gallery reveal">
+                <span class="section-subtitle" id="venueSubtitle">Mekanımızı İnceleyin</span>
+                <h2 class="section-title" id="venueTitle">Boş Salon Görselleri</h2>
+                
+                <div class="venue-slider-container">
+                    <div class="venue-slider" id="venueSlider">
+                        <div class="venue-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.44.jpeg');"></div>
+                        <div class="venue-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg');"></div>
+                        <div class="venue-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.50.jpeg');"></div>
+                    </div>
+                    
+                    <!-- Slider Kontrolleri -->
+                    <div class="venue-slider-controls" id="venueSliderControls">
+                        <button class="venue-dot active" data-slide="0" aria-label="Görsel 1"></button>
+                        <button class="venue-dot" data-slide="1" aria-label="Görsel 2"></button>
+                        <button class="venue-dot" data-slide="2" aria-label="Görsel 3"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Technical & Physical Features -->
+            <div class="venue-info reveal">
+                <span class="section-subtitle" id="venueRightSubtitle">Mimari & Teknik Detaylar</span>
+                <h2 class="section-title" id="venueRightTitle">Konfor ve Estetiğin Buluştuğu Mimari</h2>
+                <p class="venue-description" id="venueRightDesc">Hayallerinizdeki düğün konseptini hiçbir kısıtlama olmadan gerçeğe dönüştürebilmeniz için salonumuzun her bir noktasını özenle tasarladık. Ferah tavanımız ve geniş salon yapımızla misafirlerinize unutulmaz bir konfor sunuyoruz.</p>
+                
+                <div class="venue-features-grid">
+                    <!-- Feature 1: Kolonsuz Alan -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-expand"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat1Title">Kolonsuz Geniş Yapı</h3>
+                            <p id="venueFeat1Desc">Sütunsuz salon mimarimiz sayesinde masaların tamamından sahne ve pist kesintisiz görünür.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2: Tavan Yüksekliği -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-arrows-up-down"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat2Title">5 Metre Tavan Yüksekliği</h3>
+                            <p id="venueFeat2Desc">Yüksek tavan tasarımıyla kapalı salon basıklığından uzak, ferah ve görkemli bir atmosfer.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3: Kapasite -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-users"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat3Title">800 Kişilik Kapasite</h3>
+                            <p id="venueFeat3Desc">Geniş oturma planımızla yemekli veya yemeksiz büyük davetlerinizi rahatça gerçekleştirin.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 4: İklimlendirme -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-wind"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat4Title">Gelişmiş İklimlendirme</h3>
+                            <p id="venueFeat4Desc">Çift yönlü endüstriyel havalandırma ve klimalarımızla her mevsim temiz hava ve ideal sıcaklık.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 5: Akustik -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-volume-high"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat5Title">Akustik Ses Sistemi</h3>
+                            <p id="venueFeat5Desc">Özel ses yalıtımı ve dengeli ses dağıtımıyla misafirlerinizi yormayan, berrak bir müzik deneyimi.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 6: Gelin Odası -->
+                    <div class="venue-feature-card">
+                        <div class="venue-icon-box"><i class="fa-solid fa-door-open"></i></div>
+                        <div class="venue-feature-info">
+                            <h3 id="venueFeat6Title">Lüks VIP Gelin Odası</h3>
+                            <p id="venueFeat6Desc">Düğün öncesi heyecanınızı yatıştıracak, özel banyolu, makyaj masalı ve klimalı konforlu oda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section (Tanıtım Videosu) -->
+    <section id="video-showcase" class="video-showcase-section section-padding bg-dark">
+        <div class="container text-center">
+            <span class="section-subtitle" id="videoSubtitle" style="color: var(--color-gold-light);">Tanıtım Videosu</span>
+            <h2 class="section-title centered" id="videoTitle" style="color: var(--color-text-light);">Salonumuzun Büyüleyici Atmosferi</h2>
+            <p class="section-description max-w-600" id="videoDesc" style="color: rgba(255, 255, 255, 0.7);">Kısa tanıtım filmimizi izleyerek şık detaylarimizi, aydınlatma tasarımlarımızı ve salonumuzun genel ihtişamını daha yakından hissedin.</p>
+            
+            <div class="video-wrapper reveal" id="videoWrapper">
+                <div class="video-cover" id="videoCover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('Resimler/WhatsApp Image 2026-07-11 at 18.51.46 (3).jpeg');">
+                    <div class="play-btn-wrap">
+                        <button class="play-btn" id="playTourBtn" aria-label="Tanıtım Videosunu Oynat">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Video dosya adresi -->
+                <video id="tourVideo" src="videolar/AQOzGqOWGXSDJN3czP1ybaMVjgoqY607Vz88w89_ysyUkv0hrefoO-XXEAG9zzMzpFSNqCJvB2IxexE3NgJ1v-s.mp4" controls preload="none"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Hizmetlerimiz) -->
+    <section id="hizmetlerimiz" class="services-section section-padding bg-light">
+        <div class="container text-center">
+            <span class="section-subtitle" id="servicesSubtitle">Hizmetlerimiz</span>
+            <h2 class="section-title centered" id="servicesTitle">Her Konsepte Uygun Davet Seçenekleri</h2>
+            <p class="section-description max-w-600" id="servicesDesc">Hayatınızın dönüm noktalarını taçlandıracak tüm organizasyonlarınızda, profesyonel planlama ve kusursuz operasyon desteği sağlıyoruz.</p>
+            
+            <div class="services-grid grid-3 reveal" id="servicesGrid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.46 (2).jpeg" id="service1Img" alt="Düğün Organizasyonu" loading="lazy">
+                        <div class="service-overlay">
+                            <i class="fa-solid fa-heart-pulse" id="service1Icon"></i>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 id="service1Title">Düğün Organizasyonları</h3>
+                        <p id="service1Desc">Masalsı bir atmosferde, gelin yolu süslemesinden nikah kürsüsüne kadar hayalinizdeki düğünü gerçeğe dönüştürüyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.47 (2).jpeg" id="service2Img" alt="Kına Gecesi" loading="lazy">
+                        <div class="service-overlay">
+                            <i class="fa-solid fa-wand-magic-sparkles" id="service2Icon"></i>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 id="service2Title">Kına Gecesi & Bekarlığa Veda</h3>
+                        <p id="service2Desc">Geleneksel motiflerin modern konseptlerle harmanlandığı, coşku dolu ve unutulmaz kına merasimleri düzenliyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.49.jpeg" id="service3Img" alt="Nişan Daveti" loading="lazy">
+                        <div class="service-overlay">
+                            <i class="fa-solid fa-gem" id="service3Icon"></i>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 id="service3Title">Nişan & Söz Törenleri</h3>
+                        <p id="service3Desc">Aileler arası en özel adımlardan biri olan nişan töreninizi, şık ve samimi bir davet konseptiyle planlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo & Video Gallery Section -->
+    <section id="galeri" class="gallery-section section-padding">
+        <div class="container text-center">
+            <span class="section-subtitle" id="gallerySubtitle">Görsellerimiz</span>
+            <h2 class="section-title centered" id="galleryTitle">Etkinlik Albümlerimiz</h2>
+            <p class="section-description max-w-600" id="galleryDesc">Salonumuzda düzenlenen muhteşem düğün, nişan ve davetlerin fotoğraf ve videolarına albüm bazında göz atabilirsiniz.</p>
+            
+            <div class="gallery-grid reveal" id="galleryGrid">
+                <!-- Dinamik albüm kartları buraya yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Banner (İstatistikler / Sayılarla Biz) -->
+    <section class="stats-section">
+        <div class="container grid-4">
+            <div class="stat-card">
+                <span class="stat-number" id="stats1Num">1000+</span>
+                <span class="stat-label" id="stats1Label">Mutlu Çift</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stats2Num">800</span>
+                <span class="stat-label" id="stats2Label">Kişilik Kapasite</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stats3Num">150+</span>
+                <span class="stat-label" id="stats3Label">Yıllık Etkinlik</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stats4Num">100%</span>
+                <span class="stat-label" id="stats4Label">Memnuniyet Garantisi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Offer Section (İletişim & Fiyat Teklifi) -->
+    <section id="iletisim" class="contact-section section-padding bg-light">
+        <div class="container grid-2">
+            <div class="contact-info reveal">
+                <span class="section-subtitle" id="contactSubtitle">İletişim</span>
+                <h2 class="section-title" id="contactTitle">Sizi Dinlemek İçin Sabırsızlanıyoruz</h2>
+                <p class="contact-description" id="contactDesc">Özel gününüzü planlamak, salonumuzu ziyaret etmek veya fiyat teklifi almak için bizimle iletişime geçin. Ekibimiz en kısa sürede size dönüş sağlayacaktır.</p>
+                
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="detail-text">
+                            <h3>Adresimiz</h3>
+                            <p id="contactAddress">Merkez Mahallesi, Mercan Sokak No: 12, İstanbul</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="detail-text">
+                            <h3>Telefon</h3>
+                            <p><a href="tel:+902125554433" id="contactPhoneLink"><span id="contactPhone">+90 (212) 555 44 33</span></a></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="detail-text">
+                            <h3>E-Posta</h3>
+                            <p><a href="mailto:info@mercandugunsaloni.com" id="contactEmailLink"><span id="contactEmail">info@mercandugunsaloni.com</span></a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" id="contactInstagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" id="contactFacebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" id="contactYoutube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Modern Request Offer Form -->
+            <div class="form-container reveal">
+                <h3 class="form-title">Hızlı Fiyat Teklifi Alın</h3>
+                <!-- Teklif Formu Web3Forms Entegrasyonu -->
+                <form id="offerForm" class="offer-form">
+                    <!-- Web3Forms API Anahtarı ve Yönlendirmeleri Buraya Eklenecek -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="Yeni Fiyat Teklifi Talebi">
+                    <input type="hidden" name="from_name" value="Mercan Davet Web Sitesi">
+
+                    <div class="form-group">
+                        <label for="fullName">Adınız Soyadınız</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Örn. Ahmet Yılmaz">
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon Numaranız</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="0500 000 00 00">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Posta Adresiniz</label>
+                            <input type="email" id="email" name="email" required placeholder="Örn. ahmet@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="eventType">Etkinlik Türü</label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="dugun">Düğün Organizasyonu</option>
+                                <option value="kina">Kına Gecesi</option>
+                                <option value="nisan">Nişan & Söz</option>
+                                <option value="kurumsal">Kurumsal Etkinlik</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Etkinlik Tarihi</label>
+                            <input type="date" id="eventDate" name="eventDate" required>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="guestCount">Tahmini Davetli Sayısı</label>
+                            <input type="number" id="guestCount" name="guestCount" required min="50" max="1000" placeholder="Örn. 300">
+                        </div>
+                        <div class="form-group" style="visibility: hidden; height: 0; padding: 0; margin: 0;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ek Notlar / İstekleriniz</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Eklemek istediğiniz özel detaylar varsa belirtiniz..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Teklifi Gönder <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center">
+            <a href="#" class="footer-logo">
+                <span class="logo-title logoTitle">MERCAN</span>
+                <span class="logo-subtitle logoSubtitle">DÜĞÜN & DAVET</span>
+            </a>
+            <p class="footer-tagline" id="footerTagline">Hayallerinizi süsleyen o günü, kusursuz bir masala dönüştürmek için buradayız.</p>
+            <div class="footer-divider"></div>
+            <p class="copyright">&copy; 2026 Mercan Düğün Salonu. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Lightbox Modal for Gallery -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Önceki Görsel"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Sonraki Görsel"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" id="lightboxImg" alt="Büyütülmüş Görsel">
+            <video src="" id="lightboxVideo" controls preload="auto" style="display: none;"></video>
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

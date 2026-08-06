@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="siteTitle">Blog Detay | Mercan Düğün & Davet</title>
+    <meta name="description" id="metaDesc" content="Mercan Düğün & Davet blog yazısı detayı.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Marked JS for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Blog Detay Özel Tasarım Kuralları */
+        .blog-detail-hero {
+            padding: 180px 0 100px 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #ffffff;
+            text-align: center;
+        }
+        .blog-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .blog-detail-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .blog-detail-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--color-gold-light, #d4af37);
+            line-height: 1.3;
+        }
+        .blog-detail-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .blog-detail-meta span i {
+            margin-right: 8px;
+            color: var(--color-gold-light, #d4af37);
+        }
+        .blog-detail-body {
+            padding: 80px 0;
+            background-color: var(--color-light, #f9f9f9);
+        }
+        .blog-detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .blog-post-content {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444444;
+        }
+        
+        /* Markdown Style Overrides */
+        .blog-post-content h1, 
+        .blog-post-content h2, 
+        .blog-post-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-text-dark, #222222);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .blog-post-content h2 { font-size: 1.8rem; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .blog-post-content h3 { font-size: 1.4rem; }
+        .blog-post-content p { margin-bottom: 20px; }
+        .blog-post-content ul, 
+        .blog-post-content ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+        .blog-post-content blockquote {
+            border-left: 4px solid var(--color-gold, #c5a059);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #666666;
+        }
+        .blog-post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        /* Sidebar Styles */
+        .blog-sidebar {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 100px;
+        }
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+        .sidebar-widget h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--color-text-dark, #222222);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .sidebar-widget h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-gold, #c5a059);
+        }
+        .recent-posts {
+            list-style: none;
+            padding: 0;
+        }
+        .recent-post-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .recent-post-item:last-child {
+            margin-bottom: 0;
+        }
+        .recent-post-thumb {
+            width: 70px;
+            height: 70px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .recent-post-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .recent-post-info h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        .recent-post-info h5 a {
+            color: var(--color-text-dark, #222222);
+            transition: color 0.3s;
+        }
+        .recent-post-info h5 a:hover {
+            color: var(--color-gold, #c5a059);
+        }
+        .recent-post-info span {
+            font-size: 0.8rem;
+            color: var(--color-text-muted, #777777);
+        }
+        
+        @media (max-width: 992px) {
+            .blog-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-post-content {
+                padding: 30px;
+            }
+            .blog-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Premium Navigation Bar -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-title logoTitle">MERCAN</span>
+                <span class="logo-subtitle logoSubtitle">DÜĞÜN & DAVET</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html#anasayfa" class="nav-link">Ana Sayfa</a></li>
+                    <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="index.html#salonumuz" class="nav-link">Salonumuz</a></li>
+                    <li><a href="index.html#hizmetlerimiz" class="nav-link">Hizmetlerimiz</a></li>
+                    <li><a href="index.html#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="index.html#iletisim" class="nav-link btn-nav">Teklif Al</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat" id="mobileToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Blog Detail Hero Banner -->
+    <section class="blog-detail-hero" id="blogHero">
+        <div class="container">
+            <h1 id="postTitle">Yazı Başlığı</h1>
+            <div class="blog-detail-meta">
+                <span><i class="fa-regular fa-calendar"></i> <span id="postDate">01.01.2026</span></span>
+                <span><i class="fa-regular fa-user"></i> <span id="postAuthor">Mercan Davet</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Detail Content Body -->
+    <section class="blog-detail-body">
+        <div class="container">
+            <div class="blog-detail-grid">
+                <!-- Left Column: Markdown content -->
+                <main class="blog-post-content" id="blogContent">
+                    <p>Yazı yükleniyor...</p>
+                </main>
+                
+                <!-- Right Column: Sidebar (Other posts) -->
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h4>Diğer Yazılarımız</h4>
+                        <ul class="recent-posts" id="recentPosts">
+                            <!-- Diğer yazılar buraya yüklenecek -->
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center">
+            <a href="index.html" class="footer-logo">
+                <span class="logo-title logoTitle">MERCAN</span>
+                <span class="logo-subtitle logoSubtitle">DÜĞÜN & DAVET</span>
+            </a>
+            <p class="footer-tagline" id="footerTagline">Hayallerinizi süsleyen o günü, kusursuz bir masala dönüştürmek için buradayız.</p>
+            <div class="footer-divider"></div>
+            <p class="copyright">&copy; 2026 Mercan Düğün Salonu. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to parse URL and render markdown content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobil Menü
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // URL Parametresini Al (?slug=kina-gecesi)
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('slug');
+
+            if (!postSlug) {
+                window.location.href = 'blog.html';
+                return;
+            }
+
+            // settings.json ve blogs.json Yükleme
+            Promise.all([
+                fetch('settings.json').then(res => res.json()),
+                fetch('blogs.json').then(res => res.json())
+            ])
+            .then(([settingsData, blogsData]) => {
+                const s = settingsData.settings || {};
+                const blogsList = blogsData.blogs || [];
+                
+                // Logo ve Başlık Ayarlarını Güncelle
+                if (s.logo_title) {
+                    document.querySelectorAll('.logoTitle').forEach(el => el.textContent = s.logo_title);
+                }
+                if (s.logo_subtitle) {
+                    document.querySelectorAll('.logoSubtitle').forEach(el => el.textContent = s.logo_subtitle);
+                }
+                if (s.footer_tagline) {
+                    document.getElementById('footerTagline').textContent = s.footer_tagline;
+                }
+
+                // Eşleşen Blog Yazısını Bul
+                const post = blogsList.find(p => p.slug === postSlug);
+
+                if (post) {
+                    // Sayfa Başlığını ve Açıklamasını Güncelle
+                    document.title = `${post.title} | ${s.site_title || 'Mercan Düğün Salonu'}`;
+                    const metaDesc = document.getElementById('metaDesc');
+                    if (metaDesc && post.summary) metaDesc.setAttribute('content', post.summary);
+
+                    // Hero Görseli ve Yazı Bilgileri
+                    const heroImage = post.image || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg';
+                    document.getElementById('blogHero').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('${heroImage}')`;
+                    document.getElementById('postTitle').textContent = post.title;
+                    document.getElementById('postAuthor').textContent = post.author || 'Mercan Davet';
+
+                    // Tarih formatı (dd.mm.yyyy)
+                    if (post.date) {
+                        const parts = post.date.split('-');
+                        if (parts.length === 3) {
+                            document.getElementById('postDate').textContent = `${parts[2]}.${parts[1]}.${parts[0]}`;
+                        } else {
+                            document.getElementById('postDate').textContent = post.date;
+                        }
+                    }
+
+                    // Görseli ve Tırnak İçinde Kısa Metni (Summary) İçeriğin Başına Ekle
+                    let contentHtml = '';
+                    if (post.image) {
+                        contentHtml += `<img src="${post.image}" alt="${post.title}" class="blog-post-main-image" style="width:100%; height:auto; max-height:480px; object-fit:cover; border-radius:12px; margin-bottom:30px; box-shadow: var(--shadow-medium);">`;
+                    }
+                    if (post.summary) {
+                        contentHtml += `<blockquote class="blog-post-summary" style="font-size: 1.15rem; line-height: 1.8; font-style: italic; color: var(--color-text-muted); border-left: 4px solid var(--color-gold); padding-left: 20px; margin-bottom: 35px; font-weight: 500; font-family: var(--font-body);">“ ${post.summary} ”</blockquote>`;
+                    }
+                    contentHtml += marked.parse(post.content || '', { breaks: true });
+                    document.getElementById('blogContent').innerHTML = contentHtml;
+
+                    // Sidebar: Diğer Yazılar (Mevcut olan hariç)
+                    const recentPostsList = document.getElementById('recentPosts');
+                    if (recentPostsList) {
+                        recentPostsList.innerHTML = '';
+                        const otherPosts = blogsList.filter(p => p.slug !== postSlug).slice(0, 5);
+                        
+                        if (otherPosts.length > 0) {
+                            otherPosts.forEach(other => {
+                                let otherDate = '';
+                                if (other.date) {
+                                    const pParts = other.date.split('-');
+                                    otherDate = pParts.length === 3 ? `${pParts[2]}.${pParts[1]}.${pParts[0]}` : other.date;
+                                }
+
+                                const li = document.createElement('li');
+                                li.className = 'recent-post-item';
+                                li.innerHTML = `
+                                    <div class="recent-post-thumb">
+                                        <img src="${other.image || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.44.jpeg'}" alt="${other.title}">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h5><a href="blog-detay.html?slug=${other.slug}">${other.title}</a></h5>
+                                        <span>${otherDate}</span>
+                                    </div>
+                                `;
+                                recentPostsList.appendChild(li);
+                            });
+                        } else {
+                            recentPostsList.innerHTML = '<li>Diğer blog yazısı bulunmuyor.</li>';
+                        }
+                    }
+                } else {
+                    // Yazı Bulunamadı
+                    document.getElementById('blogContent').innerHTML = `
+                        <h2>Yazı Bulunamadı</h2>
+                        <p>Aradığınız blog yazısı mevcut değil veya silinmiş olabilir.</p>
+                        <a href="blog.html" class="btn btn-primary" style="display:inline-block; margin-top:15px;"><i class="fa-solid fa-arrow-left"></i> Blog Listesine Dön</a>
+                    `;
+                }
+            })
+            .catch(err => {
+                console.error("Yazı yüklenirken hata oluştu:", err);
+                document.getElementById('blogContent').innerHTML = `<p>İçerik yüklenirken bir sorun oluştu.</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
