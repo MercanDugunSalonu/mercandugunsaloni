@@ -363,12 +363,8 @@
             <!-- Modern Request Offer Form -->
             <div class="form-container reveal">
                 <h3 class="form-title">Hızlı Fiyat Teklifi Alın</h3>
-                <!-- Teklif Formu Web3Forms Entegrasyonu -->
-                <form id="offerForm" class="offer-form">
-                    <!-- Web3Forms API Anahtarı ve Yönlendirmeleri Buraya Eklenecek -->
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="Yeni Fiyat Teklifi Talebi">
-                    <input type="hidden" name="from_name" value="Mercan Davet Web Sitesi">
+                <form id="offerForm" class="offer-form" method="POST" data-netlify="true" name="teklif-formu">
+                    <input type="hidden" name="form-name" value="teklif-formu">
 
                     <div class="form-group">
                         <label for="fullName">Adınız Soyadınız</label>

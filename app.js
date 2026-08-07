@@ -656,20 +656,20 @@ function initializeUiComponents(siteData) {
 
             const formData = new FormData(offerForm);
             
-            // Web3Forms API Endpoint'i (Sunucusuz statik e-posta formu)
-            fetch('https://api.web3forms.com/submit', {
+            // Netlify Forms AJAX Gönderimi
+            fetch('/', {
                 method: 'POST',
-                body: formData
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
+            .then(response => {
+                if (response.ok) {
                     formStatus.className = 'form-status success';
                     formStatus.innerHTML = 'Teklif talebiniz başarıyla gönderildi! Sizinle en kısa sürede iletişime geçeceğiz.';
                     offerForm.reset();
                 } else {
                     formStatus.className = 'form-status error';
-                    formStatus.innerHTML = data.message || 'Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin.';
+                    formStatus.innerHTML = 'Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin.';
                 }
                 
                 submitBtn.disabled = false;
