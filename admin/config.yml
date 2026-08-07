@@ -9,6 +9,13 @@ publish_mode: simple
 media_folder: "Resimler" # Müşterinin yüklediği görsellerin kaydedileceği klasör
 public_folder: "Resimler"
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dg3zclxrf
+    api_key: "251229843892246"
+
+
 collections:
   - name: "settings"
     label: "⚙️ Genel Site Ayarları"
