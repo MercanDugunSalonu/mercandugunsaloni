@@ -197,6 +197,14 @@
 
     <!-- JavaScript to load blog data -->
     <script>
+        function optimizeImageUrl(url) {
+            if (!url) return '';
+            if (url.includes('res.cloudinary.com/') && url.includes('/image/upload/') && !url.includes('/c_limit')) {
+                return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
+            }
+            return url;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Mobil Menü
             const mobileToggle = document.getElementById('mobileToggle');
@@ -249,7 +257,7 @@
                             card.className = 'blog-card';
                             card.innerHTML = `
                                 <div class="blog-card-img">
-                                    <img src="${post.image || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.44.jpeg'}" alt="${post.title}" loading="lazy">
+                                    <img src="${optimizeImageUrl(post.image) || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.44.jpeg'}" alt="${post.title}" loading="lazy">
                                 </div>
                                 <div class="blog-card-content">
                                     <div class="blog-meta">

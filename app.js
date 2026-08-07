@@ -1,3 +1,11 @@
+function optimizeImageUrl(url) {
+    if (!url) return '';
+    if (url.includes('res.cloudinary.com/') && url.includes('/image/upload/') && !url.includes('/c_limit')) {
+        return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
+    }
+    return url;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Sitenin tüm dinamik yapısını başlatmak için ana fonksiyon
     initApp();
@@ -215,7 +223,7 @@ function renderContent(data) {
             const isVideoCover = event.cover_type === 'video';
             const coverHtml = isVideoCover 
                 ? `<img src="Resimler/WhatsApp Image 2026-07-11 at 18.51.46 (3).jpeg" alt="${event.name}"><div class="album-badge"><i class="fa-solid fa-play"></i> Video Kapak</div>`
-                : `<img src="${event.cover_path}" alt="${event.name}" loading="lazy">`;
+                : `<img src="${optimizeImageUrl(event.cover_path)}" alt="${event.name}" loading="lazy">`;
 
             card.innerHTML = `
                 <div class="album-cover">
@@ -466,7 +474,7 @@ function initializeUiComponents(siteData) {
                     const parsedMedia = JSON.parse(rawMedia);
                     if (parsedMedia && parsedMedia.length > 0) {
                         galleryImagesData = parsedMedia.map(item => ({
-                            src: item.src,
+                            src: item.type === 'video' ? item.src : optimizeImageUrl(item.src),
                             alt: item.caption && item.caption.trim() !== '' ? item.caption : albumTitle,
                             type: item.type || 'image'
                         }));

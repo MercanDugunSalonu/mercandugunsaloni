@@ -284,6 +284,14 @@
 
     <!-- JavaScript to parse URL and render markdown content -->
     <script>
+        function optimizeImageUrl(url) {
+            if (!url) return '';
+            if (url.includes('res.cloudinary.com/') && url.includes('/image/upload/') && !url.includes('/c_limit')) {
+                return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
+            }
+            return url;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Mobil Menü
             const mobileToggle = document.getElementById('mobileToggle');
@@ -334,7 +342,7 @@
                     if (metaDesc && post.summary) metaDesc.setAttribute('content', post.summary);
 
                     // Hero Görseli ve Yazı Bilgileri
-                    const heroImage = post.image || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg';
+                    const heroImage = optimizeImageUrl(post.image) || 'Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg';
                     document.getElementById('blogHero').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('${heroImage}')`;
                     document.getElementById('postTitle').textContent = post.title;
                     document.getElementById('postAuthor').textContent = post.author || 'Mercan Davet';
