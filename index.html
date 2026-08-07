@@ -18,6 +18,9 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Netlify Identity Widget (Giriş/Davet/Onay işlemleri için) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -446,5 +449,16 @@
 
     <!-- Custom JavaScript -->
     <script src="app.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
