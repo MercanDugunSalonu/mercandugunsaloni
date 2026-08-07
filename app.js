@@ -207,7 +207,8 @@ function renderContent(data) {
             card.href = 'javascript:void(0)';
             card.className = 'album-card';
             card.setAttribute('data-title', event.name);
-            card.setAttribute('data-media', JSON.stringify(event.media));
+            const validMedia = event.media ? event.media.filter(item => item && item.src && item.src.trim() !== '') : [];
+            card.setAttribute('data-media', JSON.stringify(validMedia));
 
             // Tarih formatı (dd.mm.yyyy)
             let formattedDate = '';
@@ -240,7 +241,7 @@ function renderContent(data) {
                     </div>
                     <div class="album-action">
                         <span class="album-link-text">Fotoğrafları Gör <i class="fa-solid fa-chevron-right" style="margin-left: 5px; font-size: 0.75rem;"></i></span>
-                        <span style="font-size: 0.8rem; color: var(--color-text-muted);"><i class="fa-solid fa-images" style="margin-right: 3px;"></i> ${event.media ? event.media.length : 0} Medya</span>
+                        <span style="font-size: 0.8rem; color: var(--color-text-muted);"><i class="fa-solid fa-images" style="margin-right: 3px;"></i> ${validMedia.length} Medya</span>
                     </div>
                 </div>
             `;
@@ -473,11 +474,13 @@ function initializeUiComponents(siteData) {
                 try {
                     const parsedMedia = JSON.parse(rawMedia);
                     if (parsedMedia && parsedMedia.length > 0) {
-                        galleryImagesData = parsedMedia.map(item => ({
-                            src: item.type === 'video' ? item.src : optimizeImageUrl(item.src),
-                            alt: item.caption && item.caption.trim() !== '' ? item.caption : albumTitle,
-                            type: item.type || 'image'
-                        }));
+                        galleryImagesData = parsedMedia
+                            .filter(item => item && item.src && item.src.trim() !== '')
+                            .map(item => ({
+                                src: item.type === 'video' ? item.src : optimizeImageUrl(item.src),
+                                alt: item.caption && item.caption.trim() !== '' ? item.caption : albumTitle,
+                                type: item.type || 'image'
+                            }));
                         
                         activeImageIndex = 0;
                         openLightbox();

@@ -178,7 +178,7 @@ collections:
                 widget: "list"
                 required: false
                 fields:
-                  - { label: "Medya Dosyası veya YouTube Linki", name: "src", widget: "image" }
+                  - { label: "Medya Dosyası veya YouTube Linki", name: "src", widget: "image", required: false }
                   - { label: "Medya Türü", name: "type", widget: "select", options: ["image", "video"], default: "image" }
                   - { label: "Açıklama (İsteğe bağlı)", name: "caption", widget: "string", required: false }
 
