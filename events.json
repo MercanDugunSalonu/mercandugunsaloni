@@ -111,6 +111,10 @@
         {
           "type": "image",
           "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1786093870/chakra_balancing_guide_vesiz6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1672273539/samples/cloudinary-group.jpg"
         }
       ]
     }
