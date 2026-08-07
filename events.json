@@ -9,7 +9,7 @@
       "cover_type": "image",
       "media": [
         {
-          "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1672273540/samples/animals/kitten-playing.gif",
+          "src": "",
           "type": "image",
           "caption": null
         },
@@ -54,7 +54,7 @@
           "caption": null
         },
         {
-          "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1672273555/cld-sample-4.jpg",
+          "src": "",
           "type": "image",
           "caption": null
         },
@@ -110,11 +110,11 @@
         },
         {
           "type": "image",
-          "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1786093870/chakra_balancing_guide_vesiz6.jpg"
+          "src": ""
         },
         {
           "type": "image",
-          "src": "https://res.cloudinary.com/dg3zclxrf/image/upload/c_limit,w_1024/f_auto,q_auto/v1672273539/samples/cloudinary-group.jpg"
+          "src": ""
         }
       ]
     }
