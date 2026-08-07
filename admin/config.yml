@@ -171,11 +171,12 @@ collections:
               - { label: "Albüm / Etkinlik Adı", name: "name", widget: "string" }
               - { label: "Tarih", name: "date", widget: "date", format: "YYYY-MM-DD" }
               - { label: "Kategori", name: "category_name", widget: "select", options: ["Düğün Organizasyonu", "Kına Gecesi", "Nişan & Söz", "Kurumsal Etkinlik", "Diğer"] }
-              - { label: "Kapak Resmi", name: "cover_path", widget: "image" }
+              - { label: "Kapak Resmi", name: "cover_path", widget: "image", required: false }
               - { label: "Kapak Türü", name: "cover_type", widget: "select", options: ["image", "video"], default: "image" }
               - name: "media"
                 label: "Albüm Fotoğrafları ve Videoları"
                 widget: "list"
+                required: false
                 fields:
                   - { label: "Medya Dosyası veya YouTube Linki", name: "src", widget: "image" }
                   - { label: "Medya Türü", name: "type", widget: "select", options: ["image", "video"], default: "image" }
@@ -199,7 +200,7 @@ collections:
               - { label: "Yazı Slug (URL Dostu İsim, Örn: kina-gecesi-tavsiyeleri)", name: "slug", widget: "string" }
               - { label: "Yazı Başlığı", name: "title", widget: "string" }
               - { label: "Yazı Tarihi", name: "date", widget: "date", format: "YYYY-MM-DD" }
-              - { label: "Öne Çıkan Görsel", name: "image", widget: "image" }
-              - { label: "Yazar Adı", name: "author", widget: "string", default: "Mercan Davet" }
-              - { label: "Kısa Özet (Liste Ekranında Görünecek)", name: "summary", widget: "text" }
+              - { label: "Öne Çıkan Görsel", name: "image", widget: "image", required: false }
+              - { label: "Yazar Adı", name: "author", widget: "string", default: "Mercan Davet", required: false }
+              - { label: "Kısa Özet (Liste Ekranında Görünecek)", name: "summary", widget: "text", required: false }
               - { label: "Yazı Detay İçeriği (Görsel Editör)", name: "content", widget: "markdown", description: "İpucu: Kalın yazı, listeler ve başlıklar eklemek için üstteki görsel araç çubuğunu kullanabilirsiniz. Paragrafları ayırmak için Enter tuşuna basmanız yeterlidir." }
