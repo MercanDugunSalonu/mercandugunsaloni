@@ -306,8 +306,8 @@
 
             // settings.json ve blogs.json Yükleme
             Promise.all([
-                fetch('settings.json').then(res => res.json()),
-                fetch('blogs.json').then(res => res.json())
+                fetch('settings.json?t=' + Date.now()).then(res => res.json()),
+                fetch('blogs.json?t=' + Date.now()).then(res => res.json())
             ])
             .then(([settingsData, blogsData]) => {
                 const s = settingsData.settings || {};

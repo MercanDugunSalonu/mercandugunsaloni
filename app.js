@@ -9,8 +9,8 @@ async function initApp() {
     // settings.json ve events.json dosyalarından verileri yükle
     try {
         const [settingsRes, eventsRes] = await Promise.all([
-            fetch('settings.json'),
-            fetch('events.json')
+            fetch('settings.json?t=' + Date.now()),
+            fetch('events.json?t=' + Date.now())
         ]);
         
         if (settingsRes.ok) {
