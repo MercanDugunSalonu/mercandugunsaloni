@@ -212,12 +212,12 @@
                     }
                     return url;
                 }
-                return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024/f_auto,q_auto/${url}`;
+                return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024,f_auto,q_auto/${encodeURI(url)}`;
             }
             
             const liveSiteUrl = 'https://mercandugunsalonu.com';
             const absoluteUrl = url.startsWith('/') ? `${liveSiteUrl}${url}` : `${liveSiteUrl}/${url}`;
-            return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024/f_auto,q_auto/${absoluteUrl}`;
+            return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024,f_auto,q_auto/${encodeURI(absoluteUrl)}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
