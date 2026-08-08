@@ -299,12 +299,14 @@
                     }
                     return url;
                 }
-                return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024,f_auto,q_auto/${encodeURI(url)}`;
+                return url;
             }
             
-            const liveSiteUrl = 'https://mercandugunsalonu.com';
-            const absoluteUrl = url.startsWith('/') ? `${liveSiteUrl}${url}` : `${liveSiteUrl}/${url}`;
-            return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024,f_auto,q_auto/${encodeURI(absoluteUrl)}`;
+            // Yerel resimleri Netlify'ın kendi ücretsiz ve otomatik Image CDN'i ile sıkıştırıyoruz!
+            // Bu sayede hiçbir harici servis (Cloudinary vb.) yetkilendirmesi veya güvenlik hatasıyla karşılaşmayız.
+            const relativeUrl = url.startsWith('/') ? url : `/${url}`;
+            const encodedUrl = encodeURIComponent(relativeUrl);
+            return `/.netlify/images?url=${encodedUrl}&w=1024&q=80`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
