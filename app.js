@@ -1,3 +1,4 @@
+// Netlify Deploy Trigger - v1.1
 function optimizeImageUrl(url) {
     if (!url) return '';
     
