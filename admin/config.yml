@@ -9,17 +9,6 @@ publish_mode: simple
 media_folder: "Resimler" # Müşterinin yüklediği görsellerin kaydedileceği klasör
 public_folder: "Resimler"
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: dg3zclxrf
-    api_key: "251229843892246"
-    default_transformations:
-      - - width: 1024
-          crop: limit
-        - quality: auto
-          fetch_format: auto
-
 
 collections:
   - name: "settings"

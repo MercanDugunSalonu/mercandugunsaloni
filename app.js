@@ -1,9 +1,24 @@
 function optimizeImageUrl(url) {
     if (!url) return '';
-    if (url.includes('res.cloudinary.com/') && url.includes('/image/upload/') && !url.includes('/c_limit')) {
-        return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
+    
+    // Yerel geliştirme (localhost) ortamında optimizasyonu devre dışı bırakalım
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return url;
     }
-    return url;
+
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        if (url.includes('cloudinary.com') && url.includes('/image/upload/')) {
+            if (!url.includes('/c_limit')) {
+                return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
+            }
+            return url;
+        }
+        return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024,f_auto,q_auto/${url}`;
+    }
+    
+    const liveSiteUrl = 'https://mercandugunsalonu.com';
+    const absoluteUrl = url.startsWith('/') ? `${liveSiteUrl}${url}` : `${liveSiteUrl}/${url}`;
+    return `https://res.cloudinary.com/dg3zclxrf/image/fetch/c_limit,w_1024/f_auto,q_auto/${absoluteUrl}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
