@@ -1115,7 +1115,8 @@ section {
 }
 
 .lightbox-content {
-    max-width: 80%;
+    width: 90%;
+    max-width: 850px;
     max-height: 80%;
     position: relative;
     display: flex;
