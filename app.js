@@ -654,8 +654,8 @@ function initializeUiComponents(siteData) {
 
             const formData = new FormData(offerForm);
             
-            // Netlify Forms AJAX Gönderimi
-            fetch('/', {
+            // Web3Forms AJAX Gönderimi
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
