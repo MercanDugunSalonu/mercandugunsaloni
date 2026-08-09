@@ -41,6 +41,7 @@ async function initApp() {
 
     // 2. DOM yüklendikten sonra diğer dinamik bileşenleri çalıştır
     initializeUiComponents(siteData);
+    initializeAnnouncementsAndCampaigns(siteData);
 }
 
 // Görsel ve metinsel alanları data.json ile güncelleyen fonksiyon
@@ -733,5 +734,93 @@ function initializeUiComponents(siteData) {
 
     if (venueSlides.length > 0) {
         startVenueSlideShow();
+    }
+}
+
+function initializeAnnouncementsAndCampaigns(data) {
+    const s = data.settings || {};
+    
+    // --- 1. DUYURU ŞERİDİ MANTIĞI ---
+    const banner = document.getElementById('announcementBanner');
+    const bannerText = document.getElementById('announcementText');
+    const closeBanner = document.getElementById('closeAnnouncement');
+    
+    if (banner && bannerText && s.announcement_active && s.announcement_text) {
+        // Eğer kullanıcı tarayıcı oturumunda kapatmadıysa şeridi göster
+        if (sessionStorage.getItem('hideAnnouncement') !== 'true') {
+            bannerText.innerHTML = s.announcement_text;
+            banner.style.display = 'block';
+        }
+        
+        if (closeBanner) {
+            closeBanner.addEventListener('click', () => {
+                banner.style.display = 'none';
+                sessionStorage.setItem('hideAnnouncement', 'true');
+            });
+        }
+    }
+
+    // --- 2. KAMPANYA PENCERESİ MANTIĞI ---
+    const modal = document.getElementById('promoModal');
+    const modalTitle = document.getElementById('promoTitle');
+    const modalDesc = document.getElementById('promoDesc');
+    const closeModal = document.getElementById('closePromoModal');
+    
+    if (modal && s.promo_active && s.promo_title && s.promo_desc && s.promo_end_date) {
+        const endTime = new Date(s.promo_end_date.replace(' ', 'T')).getTime();
+        
+        // Eğer bitiş tarihi gelecek bir tarihse ve kullanıcı bu oturumda kapatmadıysa göster
+        if (endTime > Date.now() && sessionStorage.getItem('hidePromoModal') !== 'true') {
+            modalTitle.textContent = s.promo_title;
+            modalDesc.textContent = s.promo_desc;
+            
+            // Modalı 1.5 saniye sonra yumuşakça aç
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 1500);
+            
+            // Sayaç güncelleme döngüsü
+            const countdownInterval = setInterval(() => {
+                const now = Date.now();
+                const distance = endTime - now;
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    modal.classList.remove('active');
+                    return;
+                }
+                
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const sec = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minsEl = document.getElementById('minutes');
+                const secsEl = document.getElementById('seconds');
+                
+                if (daysEl) daysEl.textContent = d.toString().padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = h.toString().padStart(2, '0');
+                if (minsEl) minsEl.textContent = m.toString().padStart(2, '0');
+                if (secsEl) secsEl.textContent = sec.toString().padStart(2, '0');
+            }, 1000);
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                    sessionStorage.setItem('hidePromoModal', 'true');
+                    clearInterval(countdownInterval);
+                });
+            }
+            
+            // Butona tıklandığında da kapansın
+            const actionBtn = document.getElementById('promoActionBtn');
+            if (actionBtn) {
+                actionBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+        }
     }
 }

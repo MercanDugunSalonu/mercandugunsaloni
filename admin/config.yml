@@ -57,6 +57,17 @@ collections:
             fields:
               - { label: "Site Başlığı (Tarayıcı Sekme İsmi)", name: "site_title", widget: "string" }
               - { label: "Site Açıklaması (Google Arama Sonuçları İçin)", name: "site_desc", widget: "text" }
+
+              # Anlık Duyuru Şeridi
+              - { label: "📢 Duyuru Şeridi Aktif mi?", name: "announcement_active", widget: "boolean", default: false }
+              - { label: "📢 Duyuru Metni", name: "announcement_text", widget: "string", required: false }
+
+              # Zaman Ayarlı Kampanya Penceresi
+              - { label: "🎁 Kampanya Aktif mi?", name: "promo_active", widget: "boolean", default: false }
+              - { label: "🎁 Kampanya Başlığı", name: "promo_title", widget: "string", required: false }
+              - { label: "🎁 Kampanya Açıklaması", name: "promo_desc", widget: "text", required: false }
+              - { label: "🎁 Kampanya Bitiş Tarihi (Yıl-Ay-Gün Saat:Dakika)", name: "promo_end_date", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
+
               - { label: "Ana Logo Yazısı (MERCAN)", name: "logo_title", widget: "string" }
               - { label: "Logo Alt Yazısı (DÜĞÜN & DAVET)", name: "logo_subtitle", widget: "string" }
               
@@ -185,6 +196,7 @@ collections:
           - name: "events"
             label: "Tüm Albümler"
             widget: "list"
+            collapsed: true
             summary: "{{fields.name}} ({{fields.category_name}})"
             fields:
               - { label: "Albüm ID (Benzersiz bir sayı, Örn: 1, 2, 3...)", name: "id", widget: "number", value_type: "int" }
@@ -216,6 +228,7 @@ collections:
           - name: "blogs"
             label: "Tüm Yazılar"
             widget: "list"
+            collapsed: true
             summary: "{{fields.title}} ({{fields.date}})"
             fields:
               - { label: "Yazı Slug (URL Dostu İsim, Örn: kina-gecesi-tavsiyeleri)", name: "slug", widget: "string" }

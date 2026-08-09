@@ -1,5 +1,11 @@
 {
   "settings": {
+    "announcement_active": true,
+    "announcement_text": "🎉 Erken Rezervasyonlarda Eylül Ayına Özel %15 İndirim Fırsatını Kaçırmayın! 📢",
+    "promo_active": true,
+    "promo_title": "Eylül Kampanyası Başladı!",
+    "promo_desc": "Eylül ayında yapacağınız rezervasyonlar için kolonsuz salonumuzda %15 indirim fırsatını kaçırmayın. Son günlere yaklaşıyoruz!",
+    "promo_end_date": "2026-09-30 23:59",
     "venue_feat_5_icon": "fa-solid fa-volume-high",
     "service_1_title": "Düğün Organizasyonları",
     "hero_slide_3": "Resimler/WhatsApp Image 2026-07-11 at 18.51.48.jpeg",

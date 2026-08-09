@@ -21,6 +21,14 @@
 </head>
 <body>
 
+    <!-- Announcement Banner -->
+    <div id="announcementBanner" class="announcement-banner" style="display: none;">
+        <div class="announcement-content">
+            <span id="announcementText">📢 Kampanya Duyurusu</span>
+            <button id="closeAnnouncement" class="close-announcement-btn">&times;</button>
+        </div>
+    </div>
+
     <!-- Premium Navigation Bar -->
     <header class="main-header">
         <div class="container header-container">
@@ -445,6 +453,26 @@
     </div>
 
 
+
+    <!-- Promo Campaign Modal -->
+    <div id="promoModal" class="promo-modal" role="dialog" aria-modal="true">
+        <div class="promo-modal-content">
+            <button id="closePromoModal" class="close-promo-btn" aria-label="Kapat">&times;</button>
+            <div class="promo-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3 id="promoTitle">Özel Fırsat!</h3>
+            <p id="promoDesc">Kampanya detayları yükleniyor...</p>
+            <div class="countdown-container">
+                <span class="countdown-title">Kalan Süre:</span>
+                <div class="countdown-timer">
+                    <div class="timer-box"><span id="days">00</span><small>Gün</small></div>
+                    <div class="timer-box"><span id="hours">00</span><small>Saat</small></div>
+                    <div class="timer-box"><span id="minutes">00</span><small>Dakika</small></div>
+                    <div class="timer-box"><span id="seconds">00</span><small>Saniye</small></div>
+                </div>
+            </div>
+            <a href="#iletisim" id="promoActionBtn" class="btn btn-primary btn-block">Hemen Teklif Al <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+        </div>
+    </div>
 
     <!-- Custom JavaScript -->
     <script src="app.js?v=1.2"></script>
