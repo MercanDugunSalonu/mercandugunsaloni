@@ -199,27 +199,7 @@
     <script>
         function optimizeImageUrl(url) {
             if (!url) return '';
-            
-            // Yerel geliştirme (localhost) ortamında optimizasyonu devre dışı bırakalım
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                return url;
-            }
-
-            if (url.startsWith('http://') || url.startsWith('https://')) {
-                if (url.includes('cloudinary.com') && url.includes('/image/upload/')) {
-                    if (!url.includes('/c_limit')) {
-                        return url.replace('/image/upload/', '/image/upload/c_limit,w_1024,f_auto,q_auto/');
-                    }
-                    return url;
-                }
-                return url;
-            }
-            
-            // Yerel resimleri Netlify'ın kendi ücretsiz ve otomatik Image CDN'i ile sıkıştırıyoruz!
-            // Bu sayede hiçbir harici servis (Cloudinary vb.) yetkilendirmesi veya güvenlik hatasıyla karşılaşmayız.
-            const relativeUrl = url.startsWith('/') ? url : `/${url}`;
-            const encodedUrl = encodeURIComponent(relativeUrl);
-            return `/.netlify/images?url=${encodedUrl}&w=1024&q=80`;
+            return encodeURI(url);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
