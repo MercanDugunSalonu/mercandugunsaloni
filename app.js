@@ -1,4 +1,4 @@
-// Netlify Deploy Trigger - v1.1
+// GitHub Pages Deploy Trigger - v1.2
 function optimizeImageUrl(url) {
     if (!url) return '';
     return encodeURI(url);
