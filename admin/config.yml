@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main # Sitenin yükleneceği ana git dalı (genelde main)
+  name: github
+  repo: MercanDugunSalonu/mercandugunsaloni
+  branch: main
+  auth_type: implicit
+  app_id: Ov23livknhf6O60cD7Tm
 
 local_backend: true
 
